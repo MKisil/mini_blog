@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Стати автором{% endblock title %}
+{% block content %}
+<h3>Вітаємо, {{ user|safe }}!</h3>
+<h4>Для початку вкажіть трішки про себе:</h4>
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="user" value="{{ user.id }}">
+    <input name="name" value="{{ user.username }}" type="hidden">
+    <textarea name="biography" cols="30" rows="10"></textarea>
+    <button class="submit-author-create" type="submit">Далі >></button>
+</form>
+{% endblock content %}

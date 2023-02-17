@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Автори{% endblock title %}
+{% block content %}
+<h2>Усі автори:</h2>
+<div class="author-list">
+    <ul>
+        {% for author in object_list %}
+        <li>
+            <a class="link-warning" href="{% url 'author_detail' author.slug %}">{{ author|safe }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% include '../include/pagination.html' %}
+{% endblock content %}

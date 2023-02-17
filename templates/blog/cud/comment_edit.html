@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load cache %}
+{% block title %}Редагувати коментар{% endblock title %}
+{% block content %}
+{% cache 600 comment_edit %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    {% for field in form %}
+        {{ field.label }}:
+        <p>{{ field }}</p>
+        <div>{{ field.errors }}</div>
+    {% endfor %}
+    <button type="submit">Редагувати</button>
+</form>
+{% endcache %}
+{% endblock content %}

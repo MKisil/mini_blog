@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Вхід{% endblock title %}
+{% block content %}
+<div>{{ form.non_field_error }}</div>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    {% for field in form %}
+        <p><label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}:</label>{{ field }}</p>
+        <div>{{ field.errors }}</div>
+    {% endfor %}
+    <button class="login-submit" type="submit">Увійти</button>
+</form>
+{% endblock content %}

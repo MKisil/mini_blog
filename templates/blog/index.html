@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load cache %}
+{% block content %}
+{% cache 900 home %}
+<h2>Home</h2>
+<p>Сайт міні-блог. Тут ви можете, зареєструвавшись, публікувати свої статті.</p>
+{% endcache %}
+{% endblock content %}

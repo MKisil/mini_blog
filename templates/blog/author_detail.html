@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Про автора{% endblock title %}
+{% block content %}
+<h3 class="author-name">{{ object.name|safe }}</h3>
+<p class="author-biography">{{ object.biography|safe }}</p>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Усі статті{% endblock title %}
+{% block content %}
+<h2>Усі статті:</h2>
+<div class="list-articles">
+    <ul>
+        {% for article in object_list %}
+            {% autoescape on %}
+            <li>
+                <span>
+                    <a class="link-info" href="{% url 'blog_detail' article.slug %}">{{ article.title }}</a>
+                    ({{ article.date }}) --
+                    <a class="link-warning" href="{% url 'author_detail' article.author.slug %}">{{ article.author }}</a>
+                </span>
+            </li>
+            {% endautoescape %}
+        {% endfor %}
+    </ul>
+</div>
+{% include '../include/pagination.html' %}
+{% endblock content %}

@@ -1,0 +1,176 @@
+body {
+    background: url('images/background-for-page.jpg');
+    background-size: 100%;
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+    max-width: 960px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(215, 229, 204, 0.4);
+    word-wrap: break-word;
+}
+
+.p-nav {
+    margin: 0px;
+}
+
+.p-nav a {
+    color: black;
+}
+
+.nav-profile {
+    margin-top: 30px;
+
+}
+
+.content {
+    position: relative;
+    padding-left: 40px;
+    word-wrap: break-word;
+}
+
+.list-articles {
+    max-width: 700px;
+    word-wrap: break-word;
+
+}
+
+.pagination-div {
+    position: absolute;
+    left: 200px;
+    top: 200px;
+}
+
+.comment {
+    max-width: 500px;
+    word-wrap: break-word;
+    background: #f6fa19;
+    border-radius: 20px;
+    padding: 7px;
+    margin: 20px 0 20px 30px;
+
+}
+
+.article-title {
+    text-align: center;
+    color: #915bba;
+    max-width: 700px;
+    word-wrap: break-word;
+}
+
+.article-author {
+    margin-top: 20px;
+    color: #fa9119;
+    max-width: 700px;
+    word-wrap: break-word;
+}
+
+.article-text {
+    background: #19fa73;
+    border-radius: 20px;
+    padding: 7px;
+    max-width: 700px;
+    word-wrap: break-word;
+}
+
+.comment-username {
+    font-weight: bold;
+    color: #1982fa;
+    margin: 50px 0 0 0;
+    max-width: 700px;
+    word-wrap: break-word;
+}
+
+.comment-button {
+    display: block;
+    margin: 0 0 50px 0;
+}
+
+.comment-text {
+    font-family: sans-serif;
+    color: #2b3147;
+}
+
+.author-biography {
+    font-family: sans-serif;
+    background: #19fa73;
+    border-radius: 20px;
+    padding: 7px;
+    max-width: 700px;
+    word-wrap: break-word;
+}
+
+.published-articles {
+    max-width: 700px;
+    word-wrap: break-word;
+}
+
+.unpublished-articles {
+    max-width: 700px;
+    word-wrap: break-word;
+}
+
+.author-list {
+    max-width: 700px;
+    word-wrap: break-word;
+}
+
+.author-name {
+    max-width: 700px;
+    word-wrap: break-word;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 150px;
+    vertical-align: top;
+}
+
+.submit-create-article {
+    float: right;
+}
+
+.success-create-article-msg {
+    max-width: 800px;
+}
+
+.success-create-article-home {
+    width: 100px;
+    float: right;
+    margin-top: 50px;
+}
+
+.submit-author-create {
+    display: block;
+}
+
+.limit-article-msg-home {
+    width: 100px;
+    float: right;
+    margin-top: 50px;
+}
+
+.register-submit {
+    float: right;
+}
+
+.navbar-text {
+    max-width: 200px;
+    word-wrap: break-word;
+}
+
+.login-submit {
+    float: right;
+}
+
+@media (max-width: 700px) {
+  .content {
+    width: 320px;
+  }
+}
+
+

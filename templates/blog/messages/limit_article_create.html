@@ -1,0 +1,10 @@
+{% extends '../../base.html' %}
+{% load cache %}
+
+{% block title %}Ліміт{% endblock title %}
+{% block content %}
+{% cache 3000 limit_article %}
+<h5>Увага! Ви можете публікувати не більше аніж 1 статтю на день.</h5>
+<p class="limit-article-msg-home"><a class="nav-link btn btn-outline-info" href="{% url 'home' %}">Home</a></p>
+{% endcache %}
+{% endblock content %}

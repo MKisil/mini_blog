@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Стаття{% endblock title %}
+{% block content %}
+{% autoescape on %}
+<h3 class="article-title">{{ object.title }}</h3>
+<h5 class="article-author">Автор: {{ object.author }}</h5>
+<p class="article-text">{{ object.description }}</p>
+{% endautoescape %}
+
+{% if not object.draft %}
+    {% if user.is_authenticated %}
+        <form action="{% url 'add_comment' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="user" value="{{ user.pk }}">
+            <p class="comment-username">{{ user.username|safe }}</p>
+            <textarea name="text" cols="50" rows="3"></textarea>
+            <input type="hidden" name="article" value="{{ object.pk }}">
+            <button class="comment-button" type="submit">Коментувати</button>
+        </form>
+    {% else %}
+        <p class="add-comment"><a href="{% url 'login' %}">Увійдіть</a> або <a href="{% url 'register' %}">зареєструйтесь</a>, для того, щоб коментувати</p>
+    {% endif %}
+{% endif %}
+
+
+{% if object.comment_set %}
+    {% for comment in object.comment_set.all %}
+        {% autoescape on %}
+        <div class="comment">
+            <h3>{{ comment.user }}</h3>
+            <p class="comment-text">{{ comment.text }}</p>
+            {% if comment.user.pk == user.pk %}
+                <p><a href="{% url 'edit_comment' object.slug comment.pk %}">+ Редагувати</a> | <a href="{% url 'delete_comment' object.slug comment.pk %}">- Видалити</a></p>
+            {% endif %}
+        </div>
+        {% endautoescape %}
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}

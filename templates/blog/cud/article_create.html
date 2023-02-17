@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Створення статті{% endblock title %}
+{% block content %}
+<h3>Заповніть необхідні поля:</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    {% for field in form %}
+        <p><label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}: </label>{{ field }}</p>
+        <div>{{ field.errors }}</div>
+    {% endfor %}
+    <button class="submit-create-article" type="submit">Далі >></button>
+</form>
+{% endblock content %}
