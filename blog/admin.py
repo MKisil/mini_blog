@@ -11,7 +11,7 @@ class CommentInline(admin.StackedInline):
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'date', 'draft', 'slug')
+    list_display = ('id', 'title', 'date', 'draft')
     list_display_links = ('id', 'title')
     list_editable = ('draft',)
     search_fields = ('id', 'title')
@@ -25,6 +25,7 @@ class BlogAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')
     list_display_links = ('id', 'name')
     search_fields = ('id', 'name')
+    readonly_fields = ('user',)
 
 
 @admin.register(Comment)

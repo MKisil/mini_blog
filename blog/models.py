@@ -28,8 +28,8 @@ class Blog(models.Model):
 
 
 class Author(models.Model):
-    user = models.OneToOneField(User, verbose_name='Ім\'я', on_delete=models.CASCADE, blank=True)
-    name = models.CharField(max_length=70)
+    user = models.OneToOneField(User, verbose_name='Користувач, який є автором', on_delete=models.CASCADE, blank=True)
+    name = models.CharField(max_length=70, verbose_name='Ім\'я автора')
     biography = models.TextField('Біографія')
     slug = AutoSlugField(populate_from='name', max_length=255, unique=True, db_index=True, verbose_name="URL")
 
