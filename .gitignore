@@ -7,15 +7,10 @@ idea
 *.egg
 
 dist
-db.sqlite3
 
 venv
 
-blog_cache
 tools.py
-
-
-prod_settings.py
 
 **/migrations/**
 !**/migrations
