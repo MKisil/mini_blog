@@ -6,7 +6,7 @@
     <ul>
         {% for author in object_list %}
         <li>
-            <a class="link-warning" href="{% url 'author_detail' author.slug %}">{{ author|safe }}</a>
+            <a class="link-author" href="{% url 'author_detail' author.slug %}">{{ author|safe }}</a>
         </li>
         {% endfor %}
     </ul>

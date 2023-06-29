@@ -5,7 +5,7 @@
 {% if published_articles %}
     <ul class="published-articles">
     {% for article in published_articles %}
-        <li><a href="{% url 'blog_detail' article.slug %}">{{ article|safe }}</a>   <a class="link-danger" href="{% url 'delete_article' article.pk %}">- Видалити</a></li>
+        <li><a class="link-author" href="{% url 'blog_detail' article.slug %}">{{ article|safe }}</a>   <a class="link-author" href="{% url 'delete_article' article.pk %}">- Видалити</a></li>
     {% endfor %}
     </ul>
 {% else %}
@@ -15,7 +15,7 @@
 <h4>Ваші неопубліковані статті(ті які пребувають на розгляді в адміністрації):</h4>
     <ul class="unpublished-articles">
         {% for article in unpublished_articles %}
-            <li><a href="{% url 'blog_detail' article.slug %}">{{ article|safe }}</a>   <a class="link-danger" href="{% url 'delete_article' article.pk %}">- Зняти із розгляду</a></li>
+            <li><a class="link-author" href="{% url 'blog_detail' article.slug %}">{{ article|safe }}</a>   <a class="link-author" href="{% url 'delete_article' article.pk %}">- Зняти із розгляду</a></li>
         {% endfor %}
     </ul>
 {% endif %}

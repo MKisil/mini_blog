@@ -3,7 +3,7 @@
 {% block content %}
 {% autoescape on %}
 <h3 class="article-title">{{ object.title }}</h3>
-<h5 class="article-author">Автор: {{ object.author }}</h5>
+<h5 class="article-author">{{ object.author }}</h5>
 <p class="article-text">{{ object.description }}</p>
 {% endautoescape %}
 
@@ -15,7 +15,7 @@
             <p class="comment-username">{{ user.username|safe }}</p>
             <textarea name="text" cols="50" rows="3"></textarea>
             <input type="hidden" name="article" value="{{ object.pk }}">
-            <button class="comment-button" type="submit">Коментувати</button>
+            <button class="button" type="submit">Коментувати</button>
         </form>
     {% else %}
         <p class="add-comment"><a href="{% url 'login' %}">Увійдіть</a> або <a href="{% url 'register' %}">зареєструйтесь</a>, для того, щоб коментувати</p>

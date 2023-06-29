@@ -52,4 +52,3 @@ class CreateArticleForm(forms.ModelForm):
         fields = '__all__'
         exclude = ('draft', 'author', 'slug')
 
-

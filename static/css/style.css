@@ -48,46 +48,58 @@ body {
 .comment {
     max-width: 500px;
     word-wrap: break-word;
-    background: #f6fa19;
+    background-color: rgba(169, 169, 169, 0.5);
+    border: 2px solid #696969;
     border-radius: 20px;
     padding: 7px;
     margin: 20px 0 20px 30px;
-
 }
+
+.comment a {
+    color: black;
+    text-decoration: none;
+}
+
 
 .article-title {
     text-align: center;
-    color: #915bba;
     max-width: 700px;
     word-wrap: break-word;
 }
 
 .article-author {
     margin-top: 20px;
-    color: #fa9119;
+    font-family: 'Roboto', sans-serif;
     max-width: 700px;
     word-wrap: break-word;
+    text-align: right;
 }
 
 .article-text {
-    background: #19fa73;
-    border-radius: 20px;
-    padding: 7px;
+    padding: 7px 7px 7px 0;
     max-width: 700px;
     word-wrap: break-word;
 }
 
 .comment-username {
     font-weight: bold;
-    color: #1982fa;
+    color: #696969;
     margin: 50px 0 0 0;
     max-width: 700px;
     word-wrap: break-word;
 }
 
-.comment-button {
+.button {
     display: block;
-    margin: 0 0 50px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: white;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .comment-text {
@@ -97,7 +109,6 @@ body {
 
 .author-biography {
     font-family: sans-serif;
-    background: #19fa73;
     border-radius: 20px;
     padding: 7px;
     max-width: 700px;
@@ -165,6 +176,40 @@ body {
 
 .login-submit {
     float: right;
+}
+
+textarea {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 6px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+}
+
+textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.link-article {
+    color: black;
+    text-decoration: none;
+}
+
+.link-author {
+    color: black;
+    text-decoration: none;
 }
 
 @media (max-width: 700px) {

@@ -49,8 +49,8 @@ class Comment(models.Model):
     text = models.TextField(verbose_name='Коментар')
 
     def __str__(self):
-        return f"Коментарій до статті - {self.article}"
+        return f"Коментар до статті - {self.article}"
 
     class Meta:
-        verbose_name = 'Коментарій'
+        verbose_name = 'Коментар'
         verbose_name_plural = 'Коментарії'
